@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+  <body ng-app="app">
+    <h2 class="text-center">Compras en-línea</h2>
+    <div class="panel panel-default" ng-controller="miCompra">
+      <div class="panel-body">
+          <h2 class="text-center">Valor total</h2>
+          <h1 class="text-center">CLP $ {{valorTotal | number:2}}</h1>
+        <label for="valorCompra">Valor compra</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">US $</span>
+          <input type="number" class="form-control" ng-model="valorCompra" ng-change="actualizarTotal()" value="1">
+        </div>
+        <label for="comisionDolar">Comisión dólar</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">CLP $</span>
+          <input type="number" class="form-control" ng-model="comisionDolar" ng-change="actualizarTotal()">
+        </div>
+        <label for="comisionBanco">Comisión banco</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">%</span>
+          <input type="number" class="form-control" ng-model="comisionBanco" ng-change="actualizarTotal()">
+        </div>
+        <label for="valorEstimado">Dólar estimado</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">CLP $</span>
+          <input type="number" class="form-control" ng-model="valorEstimado" ng-change="actualizarTotal()" value="0">
+        </div>
+        <label for="valorDolar">Dólar observado</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">CLP $</span>
+          <input type="number" class="form-control" ng-model="valorDolar" ng-change="actualizarTotal()" disabled>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="text-center"><h2><span class="glyphicon glyphicon-leaf" style="color: green"></span></h2> <h4> Desarrollado por Miguel González Aravena</h4></div>
+  </div>
+  </body>
+</html>
