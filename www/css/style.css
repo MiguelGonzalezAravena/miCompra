@@ -1,4 +1,13 @@
 /* Empty. Add your own CSS if you like */
-body {
-  padding: 10px;
+.panel-default {
+  margin: 10px;
+}
+
+h2 {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.btn-primary{
+  margin-left: 10px;
 }

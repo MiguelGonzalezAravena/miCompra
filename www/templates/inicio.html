@@ -1,0 +1,58 @@
+<ion-view>
+  <ion-content>
+    <h2 class="text-center">
+      Mi Compra
+    </h2>
+    <div class="panel panel-default" ng-controller="miCompra">
+      <div class="panel-body">
+      <div class="form-horizontal">
+          <h2 class="text-center"><span class="label label-success">Valor total</span></h2>
+          <div class="alert alert-info" role="alert">
+            <h1 class="text-center">CLP $ {{valorTotal | number:2}}</h1>
+          </div>
+        <div class="alert alert-warning" role="alert">          
+        <div class="form-group container-fluid">
+          <label for="valorCompra"><h3>Valor compra</h3></label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon">US $</span>
+            <input type="number" class="form-control" ng-model="valorCompra" ng-change="actualizarTotal()" value="1">
+          </div>
+        </div>
+        </div>
+        <div class="form-group container-fluid">
+          <label for="comisionDolar">Comisión dólar</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon">CLP $</span>
+            <input type="number" class="form-control" ng-model="comisionDolar" ng-change="actualizarTotal()">
+          </div>
+        </div>
+        <div class="form-group container-fluid">
+          <label for="comisionBanco">Comisión banco</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon">%</span>
+            <input type="number" class="form-control" ng-model="comisionBanco" ng-change="actualizarTotal()">
+          </div>
+        </div>
+        <div class="form-group container-fluid">
+          <label for="valorEstimado">Dólar estimado</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon">CLP $</span>
+            <input type="number" class="form-control" ng-model="valorEstimado" ng-change="actualizarTotal()" value="0">
+          </div>
+        </div>
+        <div class="form-group container-fluid">
+          <label for="valorDolar">Dólar observado</label>
+          <div class="input-group input-group-lg">
+            <span class="input-group-addon">CLP $</span>
+            <input type="number" class="form-control" ng-model="valorDolar" ng-change="actualizarTotal()" disabled>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <a ui-sref="informacion">Información</a>
+    </div>
+    </div>
+  </ion-content>
+</ion-view>
